@@ -1,6 +1,7 @@
 
 import 'package:bioscopify/Blocs/theme.dart';
 import 'package:bioscopify/UI/Screens/Main/home.dart';
+import 'package:bioscopify/UI/Themes/night.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -10,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<ThemeChanger>(
-      builder: (_) => ThemeChanger(ThemeData.dark()),
+      builder: (_) => ThemeChanger(nightTheme()),
       child: new MaterialAppWithTheme(),
     );
   }

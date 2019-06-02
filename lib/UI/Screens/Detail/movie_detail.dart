@@ -1,9 +1,11 @@
+import 'package:bioscopify/Blocs/theme.dart';
 import 'package:bioscopify/Model/movie.dart';
 import 'package:bioscopify/UI/Helper/clips.dart';
 import 'package:bioscopify/util/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 
 class MovieDetail extends StatelessWidget {
   final Movie movie;
@@ -12,10 +14,12 @@ class MovieDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+  ThemeChanger _themeChanger = Provider.of<ThemeChanger>(context);
+
     var formatter = new DateFormat('yyyy');
     var releaseDate = formatter.format(movie.releaseDate);
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: _themeChanger.getTheme().backgroundColor,
       body: SingleChildScrollView(
         child: Container(
           child: Column(
@@ -71,7 +75,7 @@ class MovieDetail extends StatelessWidget {
                           color: Colors.deepOrange,
                           size: 20,
                         ),
-                        backgroundColor: Colors.white,
+                        backgroundColor: _themeChanger.getTheme().backgroundColor,
                         onPressed: () {
                           Navigator.pop(context);
                         },
@@ -127,7 +131,7 @@ class MovieDetail extends StatelessWidget {
                 children: <Widget>[
                   Container(
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: _themeChanger.getTheme().backgroundColor,
                       boxShadow: [
                         BoxShadow(
                           color: Colors.black87,
@@ -138,7 +142,7 @@ class MovieDetail extends StatelessWidget {
                     height: MediaQuery.of(context).size.height * 0.60,
                   ),
                   Container(
-                    color: Colors.white,
+                    color: _themeChanger.getTheme().backgroundColor,
                     child: Container(
                       margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
                       child: Column(
@@ -174,11 +178,7 @@ class MovieDetail extends StatelessWidget {
                                     Text(
                                       "Genres",
                                       textAlign: TextAlign.start,
-                                      style: TextStyle(
-                                          color: Colors.black87,
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.bold),
-                                    ),
+                                      style: _themeChanger.getTheme().textTheme.subtitle),
                                     Row(
                                       children: <Widget>[
                                         Container(
@@ -233,10 +233,7 @@ class MovieDetail extends StatelessWidget {
                                       child: Text(
                                         "Director",
                                         textAlign: TextAlign.start,
-                                        style: TextStyle(
-                                            color: Colors.black87,
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.bold),
+                                        style: _themeChanger.getTheme().textTheme.subtitle,
                                       ),
                                     ),
                                     Container(
@@ -244,10 +241,7 @@ class MovieDetail extends StatelessWidget {
                                           0.4,
                                       child: Text(
                                         "Chad Stahelski",
-                                        style: TextStyle(
-                                            color: Colors.black87,
-                                            fontSize: 11,
-                                            fontWeight: FontWeight.w400),
+                                         style: _themeChanger.getTheme().textTheme.body2,
                                         overflow: TextOverflow.ellipsis,
                                         maxLines: 3,
                                       ),
@@ -257,10 +251,7 @@ class MovieDetail extends StatelessWidget {
                                       child: Text(
                                         "Cast",
                                         textAlign: TextAlign.start,
-                                        style: TextStyle(
-                                            color: Colors.black87,
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.bold),
+                                        style: _themeChanger.getTheme().textTheme.subtitle,
                                       ),
                                     ),
                                     Container(
@@ -268,10 +259,7 @@ class MovieDetail extends StatelessWidget {
                                           0.4,
                                       child: Text(
                                         "Keanu Reeves, Halle Berry, Ian McShane, Laurence Fishburne, Anjelica Huston",
-                                        style: TextStyle(
-                                            color: Colors.black87,
-                                            fontSize: 11,
-                                            fontWeight: FontWeight.w400),
+                                         style: _themeChanger.getTheme().textTheme.body2,
                                         overflow: TextOverflow.ellipsis,
                                         maxLines: 3,
                                       ),
@@ -281,10 +269,7 @@ class MovieDetail extends StatelessWidget {
                                       child: Text(
                                         "Screentime",
                                         textAlign: TextAlign.start,
-                                        style: TextStyle(
-                                            color: Colors.black87,
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.bold),
+                                       style: _themeChanger.getTheme().textTheme.subtitle,
                                       ),
                                     ),
                                     Container(
@@ -292,11 +277,7 @@ class MovieDetail extends StatelessWidget {
                                           0.4,
                                       child: Text(
                                         "2h 11min",
-                                        style: TextStyle(
-                                            color: Colors.black87,
-                                            fontSize: 11,
-                                            fontStyle: FontStyle.italic,
-                                            fontWeight: FontWeight.w400),
+                                        style: _themeChanger.getTheme().textTheme.body2,
                                         overflow: TextOverflow.ellipsis,
                                         maxLines: 3,
                                       ),
@@ -311,14 +292,11 @@ class MovieDetail extends StatelessWidget {
                                 MediaQuery.of(context).size.width * 0.05,
                                 0,
                                 MediaQuery.of(context).size.width * 0.05,
-                                0),
+                                5),
                             child: Text(
                               "Overview",
                               textAlign: TextAlign.start,
-                              style: TextStyle(
-                                  color: Colors.black87,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold),
+                               style: _themeChanger.getTheme().textTheme.subtitle,
                             ),
                           ),
                           Container(
@@ -327,23 +305,20 @@ class MovieDetail extends StatelessWidget {
                                 0,
                                 MediaQuery.of(context).size.width * 0.05,
                                 0),
-                            color: Colors.deepOrange[500],
+                            color: _themeChanger.getTheme().primaryColorLight,
                             width: MediaQuery.of(context).size.width * 0.2,
                             height: 2,
                           ),
                           Container(
                             margin: EdgeInsets.fromLTRB(
                                 MediaQuery.of(context).size.width * 0.05,
-                                10,
+                                5,
                                 MediaQuery.of(context).size.width * 0.05,
                                 10),
                             width: MediaQuery.of(context).size.width * 0.9,
                             child: Text(
                               movie.overview,
-                              style: TextStyle(
-                                  color: Colors.black87,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w400),
+                               style: _themeChanger.getTheme().textTheme.body1,
                               overflow: TextOverflow.ellipsis,
                               maxLines: 6,
                             ),
@@ -351,7 +326,8 @@ class MovieDetail extends StatelessWidget {
                           Center(
                             child: OutlineButton(
                               borderSide: BorderSide(color: Colors.deepOrange),
-                              child: Text("Continue reading"),
+                              child: Text("Continue reading",
+                              style: _themeChanger.getTheme().textTheme.button,),
                               shape: RoundedRectangleBorder(
                                   borderRadius:
                                       new BorderRadius.circular(30.0)),
