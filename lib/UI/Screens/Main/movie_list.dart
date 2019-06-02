@@ -1,11 +1,9 @@
 import 'package:bioscopify/Model/movie.dart';
 import 'package:bioscopify/Service/api_service.dart';
-import 'package:bioscopify/UI/movie_detail.dart';
-import 'package:bioscopify/settings.dart';
+import 'package:bioscopify/UI/Screens/Detail/movie_detail.dart';
 import 'package:bioscopify/util/utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CurrentMoviesList extends StatelessWidget {
   final int code;
@@ -94,7 +92,8 @@ class CurrentMoviesList extends StatelessWidget {
                         ],
                         image: DecorationImage(
                             fit: BoxFit.fill,
-                            image: BioscopifyUtils.imageCheck(values[index].urlPoster)),
+                            image: BioscopifyUtils.imageCheck(
+                                values[index].urlPoster)),
                       ),
                       width: 130,
                       height: 190,
@@ -111,12 +110,16 @@ class CurrentMoviesList extends StatelessWidget {
                                     spreadRadius: 3,
                                     color: Colors.black45)
                               ],
-                              color: BioscopifyUtils.ratingcheck(values[index].score),
+                              color: BioscopifyUtils.ratingcheck(
+                                  values[index].score),
                               borderRadius:
                                   BorderRadius.all(Radius.circular(20)),
                               border:
                                   Border.all(color: Colors.white10, width: 1)),
-                          child: Text(values[index].score.toString(), style: TextStyle(color: Colors.white),),
+                          child: Text(
+                            values[index].score.toString(),
+                            style: TextStyle(color: Colors.white),
+                          ),
                         )),
                   ],
                 ),
@@ -127,6 +130,4 @@ class CurrentMoviesList extends StatelessWidget {
       ],
     );
   }
-
-
 }

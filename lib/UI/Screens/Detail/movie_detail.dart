@@ -1,10 +1,9 @@
 import 'package:bioscopify/Model/movie.dart';
+import 'package:bioscopify/UI/Helper/clips.dart';
 import 'package:bioscopify/util/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
-
-import '../main.dart';
 
 class MovieDetail extends StatelessWidget {
   final Movie movie;
