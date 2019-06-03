@@ -5,16 +5,14 @@ A very basic implimentation of ThemovieDB API, made in a couple of hours. I migh
 App makes use of the Provider Package to switch between a dark and light theme.
 
 ## Main View
-![Main](https://i.imgur.com/0hfFvCC.jpg)
+![Main](https://i.imgur.com/0hfFvCC.jpg | width=100)
 
 ## Detail View
-![Detail](https://i.imgur.com/TIpR00a.jpg)
+![Detail](https://i.imgur.com/TIpR00a.jpg | width=100)
 
 ## Getting Started
 
-Make your own Flutter app by getting started below.
-
-A few resources to get you started if this is your first Flutter project:
+Make your own Flutter app by getting started below:
 
 - [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
