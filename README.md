@@ -5,7 +5,7 @@ A very basic implimentation of ThemovieDB API, made in a couple of hours. I migh
 App makes use of the Provider Package to switch between a dark and light theme.
 
 ## Main View
-![Main](https://i.imgur.com/0hfFvCC.jpg | width=100)
+<img src="https://i.imgur.com/0hfFvCC.jpg" width="100">
 
 ## Detail View
 ![Detail](https://i.imgur.com/TIpR00a.jpg | width=100)
